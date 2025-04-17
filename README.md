@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Portfólio - [Seu Nome]
 
-## Getting Started
+Este é meu portfólio pessoal, criado para apresentar meus projetos, habilidades e estilo como desenvolvedor. A proposta é ter uma experiência suave, moderna e que reflita minha identidade como criador de software.
 
-First, run the development server:
+## ✨ Sobre Mim
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Sou estudante de **Desenvolvimento de Software Multiplataforma (DSM)** na **Fatec**, apaixonado por tecnologia, interfaces modernas e soluções inteligentes com IA. Busco sempre unir design, performance e funcionalidade.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Algumas características que tento trazer para meus projetos:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Dark/Light mode com transições suaves
+- Animações com Framer Motion
+- Layout responsivo
+- Experiências interativas e elegantes
+- Organização de código clara e escalável
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Atualmente, estou trabalhando em projetos como:
 
-## Learn More
+- **Kriptu**: uma plataforma inteligente para análise e aprendizado sobre criptomoedas, com gráficos dinâmicos, wiki integrada e IA.
 
-To learn more about Next.js, take a look at the following resources:
+## 🖥️ Sobre o Projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Este portfólio foi feito usando **React com Next.js**, com foco em performance, estética e interatividade. Aqui você encontra:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 📱 Layout responsivo para todas as telas
+- 🌗 Suporte a tema claro e escuro
+- 🎞️ Animações com [Framer Motion](https://www.framer.com/motion/)
+- 🖼️ Pré-visualização automática de projetos via screenshot de URL
+- ⚡ Componentização e uso de Tailwind CSS
+- 🧠 Organização pensada para escalabilidade e manutenção
 
-## Deploy on Vercel
+## 🚀 Tecnologias Usadas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [thum.io](https://www.thum.io/) para previews de projetos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📬 Contato
+
+Me encontre no [LinkedIn](https://www.linkedin.com/in/arthur-verdadeiro/) ou envie um e-mail para arthur.verdadeiro@outlook.com .
