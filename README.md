@@ -1,4 +1,4 @@
-# 🌐 Portfólio - [Seu Nome]
+# 🌐 Portfólio - Arthur Verdadeiro
 
 Este é meu portfólio pessoal, criado para apresentar meus projetos, habilidades e estilo como desenvolvedor. A proposta é ter uma experiência suave, moderna e que reflita minha identidade como criador de software.
 
