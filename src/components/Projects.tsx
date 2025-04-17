@@ -16,7 +16,7 @@ const Projects = () => {
     {
       title: 'Meu Portfólio',
       description: 'Este portfólio moderno com dark/light mode e animações suaves.',
-      link: 'https://seuportifolio.vercel.app',
+      link: 'https://arthurverdadeiro.netlify.app/',
     },
   ]
 
