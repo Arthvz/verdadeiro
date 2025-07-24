@@ -26,11 +26,14 @@ export default function Linktree() {
     album: "",
     imageUrl: ""
   })
-  const [twitchData, setTwitchData] = useState({
+  const [twitchData, setTwitchData] = useState<any>({
     isLive: false,
-    title: "Carregando...",
-    viewers: 0,
-    category: "Twitch"
+    displayName: "Carregando...",
+    profileImageUrl: "",
+    recentVideos: [],
+    channelUrl: "",
+    viewCount: 0,
+    liveData: null
   })
 
   // Detectar tema
@@ -83,9 +86,12 @@ export default function Linktree() {
         console.error('Erro ao buscar dados da Twitch:', error)
         setTwitchData({
           isLive: false,
-          title: "Erro ao conectar",
-          viewers: 0,
-          category: "Twitch"
+          displayName: "Erro ao conectar",
+          profileImageUrl: "",
+          recentVideos: [],
+          channelUrl: "",
+          viewCount: 0,
+          liveData: null
         })
       }
     }
@@ -198,7 +204,16 @@ export default function Linktree() {
         >
           <div className={`bg-gradient-to-r ${twitchData.isLive ? 'from-purple-500 to-purple-600' : 'from-gray-600 to-gray-700'} rounded-2xl p-6 text-white shadow-lg`}>
             <div className="flex items-center gap-4">
-              <FaTwitch className="text-3xl" />
+              <div className="flex items-center gap-3">
+                <FaTwitch className="text-3xl" />
+                {twitchData.profileImageUrl && (
+                  <img 
+                    src={twitchData.profileImageUrl} 
+                    alt="Profile" 
+                    className="w-12 h-12 rounded-full border-2 border-white/20"
+                  />
+                )}
+              </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
                   <p className="text-sm opacity-90">
@@ -209,14 +224,51 @@ export default function Linktree() {
                   )}
                 </div>
                 <h3 className="font-bold text-lg">
-                  {twitchData.isLive ? twitchData.title : 'Próxima live em breve'}
+                  {twitchData.isLive && twitchData.liveData ? 
+                    twitchData.liveData.title : 
+                    twitchData.displayName || 'Próxima live em breve'
+                  }
                 </h3>
                 <p className="text-sm opacity-90">
-                  {twitchData.isLive ? `${twitchData.viewers} viewers` : 'Desenvolvimento ao vivo'}
+                  {twitchData.isLive && twitchData.liveData ? 
+                    `${twitchData.liveData.viewers} viewers • ${twitchData.liveData.category}` : 
+                    `${twitchData.viewCount} views totais`
+                  }
                 </p>
               </div>
-              <Video className="w-6 h-6" />
+              <div className="flex flex-col items-center gap-2">
+                <Video className="w-6 h-6" />
+                {twitchData.channelUrl && (
+                  <Link 
+                    href={twitchData.channelUrl} 
+                    target="_blank"
+                    className="text-xs bg-white/20 px-2 py-1 rounded hover:bg-white/30 transition"
+                  >
+                    Ver Canal
+                  </Link>
+                )}
+              </div>
             </div>
+            
+            {/* Últimos vídeos - mostrar apenas se não estiver ao vivo */}
+            {!twitchData.isLive && twitchData.recentVideos && twitchData.recentVideos.length > 0 && (
+              <div className="mt-4 pt-4 border-t border-white/20">
+                <p className="text-sm opacity-90 mb-2">Últimos vídeos:</p>
+                <div className="space-y-2">
+                  {twitchData.recentVideos.slice(0, 2).map((video: any, index: number) => (
+                    <Link 
+                      key={index}
+                      href={video.url} 
+                      target="_blank"
+                      className="block text-sm bg-white/10 rounded p-2 hover:bg-white/20 transition"
+                    >
+                      <div className="font-medium truncate">{video.title}</div>
+                      <div className="text-xs opacity-75">{video.viewCount} views</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </motion.div>
 

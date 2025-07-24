@@ -40,13 +40,21 @@ SPOTIFY_CLIENT_SECRET=seu_client_secret_aqui`}
 
               <div className="bg-muted p-4 rounded">
                 <h3 className="font-bold mb-2">Passo 3: Obter Refresh Token</h3>
-                <p className="text-sm mb-2">Após configurar as variáveis acima, clique no botão:</p>
-                <Link 
-                  href="/api/auth/callback" 
-                  className="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
-                >
-                  🔐 Autorizar Spotify
-                </Link>
+                <p className="text-sm mb-2">Após configurar as variáveis acima, siga o processo de autorização:</p>
+                <div className="flex gap-2">
+                  <Link 
+                    href="/spotify-auth" 
+                    className="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+                  >
+                    🔐 Configurar Spotify
+                  </Link>
+                  <Link 
+                    href="/api/auth/callback" 
+                    className="inline-block bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+                  >
+                    ⚡ Autorização Rápida
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
