@@ -5,11 +5,11 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 
 const NavigationToggle = () => {
-    const [activeSection, setActiveSection] = useState<'about' | 'projects'>('about')
+    const [activeSection, setActiveSection] = useState<'about' | 'projects' | 'contact'>('about')
     const [isVisible, setIsVisible] = useState(false)
     const [hasMounted, setHasMounted] = useState(false)
 
-    const handleChange = (section: 'about' | 'projects') => {
+    const handleChange = (section: 'about' | 'projects' | 'contact') => {
         setActiveSection(section)
         document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' })
     }
@@ -56,6 +56,19 @@ const NavigationToggle = () => {
                     onClick={() => handleChange('projects')}
                 >
                     PROJECTS
+                </Label>
+            </div>
+            <div className="flex items-center gap-2">
+                <Checkbox
+                    checked={activeSection === 'contact'}
+                    onCheckedChange={() => handleChange('contact')}
+                    className="w-5 h-5 accent-black dark:accent-white"
+                />
+                <Label
+                    className="cursor-pointer text-sm font-bold"
+                    onClick={() => handleChange('contact')}
+                >
+                    CONTACT
                 </Label>
             </div>
         </div>

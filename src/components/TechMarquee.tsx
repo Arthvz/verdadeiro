@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import {
@@ -19,6 +18,7 @@ import {
   SiMysql,
   SiMongodb,
 } from 'react-icons/si'
+import { Marquee } from './magicui/marquee'
 
 const techItems = [
   { name: 'React', icon: SiReact, link: 'https://reactjs.org' },
@@ -50,27 +50,19 @@ const TechMarqueeIcons = () => {
     return () => obs.disconnect()
   }, [])
 
-  // Duplicate array to allow seamless scroll
-  const marqueeItems = [...techItems, ...techItems]
-
   return (
-    <div className="max-w-screen-2xl mx-auto relative overflow-hidden py-8">
-      <motion.div
-        className="flex items-center gap-8 whitespace-nowrap"
-        style={{ willChange: 'transform' }}
-        animate={{ x: ['0%', '-50%'] }}
-        transition={{ repeat: Infinity, ease: 'linear', duration: 20 }}
-      >
-        {marqueeItems.map((tech, idx) => {
+    <div className="max-w-screen-2xl mx-auto relative overflow-hidden py-6 sm:py-8">
+      <Marquee pauseOnHover repeat={4} className="gap-6 sm:gap-8">
+        {techItems.map((tech, idx) => {
           const Icon = tech.icon
           return (
             <a
-              key={idx}
+              key={tech.name}
               href={tech.link}
               target="_blank"
               rel="noopener noreferrer"
               className={clsx(
-                'flex-shrink-0 text-4xl md:text-5xl transition-transform hover:scale-110',
+                'flex-shrink-0 text-3xl sm:text-4xl md:text-5xl transition-transform hover:scale-110',
                 isDark ? 'text-white' : 'text-gray-800'
               )}
               title={tech.name}
@@ -79,7 +71,7 @@ const TechMarqueeIcons = () => {
             </a>
           )
         })}
-      </motion.div>
+      </Marquee>
     </div>
   )
 }

@@ -95,6 +95,24 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 html.dark {
@@ -143,6 +161,23 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* Força o terminal sempre no tema dark */
+.terminal-dark {
+  background-color: #1a1a1a !important;
+  border-color: #374151 !important;
+  color: #f3f4f6 !important;
+}
+
+.terminal-dark .terminal-header {
+  border-color: #374151 !important;
+}
+
+.terminal-dark pre,
+.terminal-dark code {
+  background-color: transparent !important;
+  color: inherit !important;
 }
 
 @layer base {

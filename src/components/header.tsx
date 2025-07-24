@@ -80,10 +80,10 @@ const Header: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="transition duration-500"
           >
-            <div className="container mx-auto px-4 sm:px-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 items-center py-4">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 items-center py-3 sm:py-4">
                 {/* Left: Theme toggle (desktop) */}
-                <div className="flex justify-start items-center gap-2 mb-4 md:mb-0">
+                <div className="flex justify-start items-center gap-2 mb-3 md:mb-0">
                   {!isMobile && (
                     <>
                       <Switch
@@ -91,8 +91,8 @@ const Header: React.FC = () => {
                         onClick={toggleTheme}
                         checked={isDark}
                       />
-                      <Label htmlFor="theme-toggle" className="font-secondary">
-                        Activate {isDark ? <Sun /> : <Moon />}
+                      <Label htmlFor="theme-toggle" className="font-secondary text-sm sm:text-base">
+                        Activate {isDark ? <Sun className="w-4 h-4 sm:w-5 sm:h-5" /> : <Moon className="w-4 h-4 sm:w-5 sm:h-5" />}
                       </Label>
                     </>
                   )}
@@ -100,8 +100,10 @@ const Header: React.FC = () => {
 
                 {/* Center: Logo */}
                 <div className="text-center">
-                  <h1 className="text-3xl font-secondary font-bold m-0">VERDADEIRO</h1>
-                  <p className="text-xl font-bold m-0">ARTHUR VERDADEIRO</p>
+                  <a href="/">
+                    <h1 className="text-2xl sm:text-3xl font-secondary font-bold m-0">VERDADEIRO</h1>
+                    <p className="text-lg sm:text-xl font-bold m-0">ARTHUR VERDADEIRO</p>
+                  </a>
                 </div>
 
                 {/* Right: Links ou Drawer */}
@@ -109,7 +111,7 @@ const Header: React.FC = () => {
                   {isMobile ? (
                     <Drawer>
                       <DrawerTrigger>
-                        <Menu className="w-8 h-8" />
+                        <Menu className="w-6 h-6 sm:w-8 sm:h-8" />
                       </DrawerTrigger>
                       <DrawerContent className="p-4">
                         <motion.div

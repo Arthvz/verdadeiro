@@ -4,6 +4,7 @@ import Projects from '@/components/Projects'
 import Footer from '@/components/Footer'
 import Header from '@/components/header'
 import TechMarqueeIcons from '@/components/TechMarquee'
+import Contact from '@/components/Contact'
 
 export default function Home() {
   return (
@@ -15,10 +16,11 @@ export default function Home() {
       <NavigationToggle />
 
       {/* Conteúdo principal */}
-      <main className="pt-24"> {/* padding-top para não sobrepor o header */}
+      <main className="pt-20 sm:pt-24"> {/* padding-top para não sobrepor o header */}
         <About />
         <TechMarqueeIcons />
         <Projects />
+        <Contact />
       </main>
 
       {/* Rodapé */}

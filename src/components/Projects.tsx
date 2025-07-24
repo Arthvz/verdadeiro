@@ -14,6 +14,11 @@ const Projects = () => {
       link: 'https://kriptu.com.br',
     },
     {
+      title: 'EmploYEAH',
+      description: 'Plataforma de gestão de pontos para empresas e colaboradores, focado em engajamento e produtividade, cultura empresarial.',
+      link: 'https://employeah.vercel.app/',
+    },
+    {
       title: 'Meu Portfólio',
       description: 'Este portfólio moderno com dark/light mode e animações suaves.',
       link: 'https://arthurverdadeiro.netlify.app/',
@@ -46,9 +51,9 @@ const Projects = () => {
   }, [])
 
   return (
-    <section id="projects" className="min-h-screen px-4 py-20 relative mb-10">
+    <section id="projects" className="min-h-screen px-4 sm:px-6 py-16 sm:py-20 relative mb-10">
       {!isMobile && (
-        <div className="absolute top-0 left-0 w-full h-full flex items-start justify-between pt-6 px-14 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full flex items-start justify-between pt-6 px-8 lg:px-14 pointer-events-none">
           <img
             src={isDark ? '/images/asset-esq-b.png' : '/images/asset-esq.png'}
             alt="Asset esquerdo topo"
@@ -74,7 +79,7 @@ const Projects = () => {
       )}
 
       <motion.h2
-        className="text-3xl md:text-4xl font-bold mb-10 pt-28 text-center"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 pt-20 sm:pt-28 text-center"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -83,7 +88,7 @@ const Projects = () => {
       </motion.h2>
 
       <motion.div
-        className="flex flex-col gap-12 max-w-5xl mx-auto w-full"
+        className="flex flex-col gap-8 sm:gap-12 max-w-5xl mx-auto w-full"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -101,7 +106,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="rounded-2xl overflow-hidden border hover:shadow-xl transition bg-background"
             >
-              <div className="w-full h-64 md:h-96 overflow-hidden bg-muted relative">
+              <div className="w-full h-48 sm:h-64 md:h-80 lg:h-96 overflow-hidden bg-muted relative">
                 {!imgError ? (
                   <img
                     src={previewUrl}
@@ -112,17 +117,17 @@ const Projects = () => {
                 ) : (
                   <div className="flex items-center justify-center w-full h-full bg-muted text-muted-foreground text-center p-4">
                     <div>
-                      <span className="text-4xl mb-2 block">🌐</span>
-                      <p className="text-lg font-semibold">{project.title}</p>
-                      <p className="text-sm opacity-70">Preview indisponível</p>
+                      <span className="text-2xl sm:text-4xl mb-2 block">🌐</span>
+                      <p className="text-base sm:text-lg font-semibold">{project.title}</p>
+                      <p className="text-xs sm:text-sm opacity-70">Preview indisponível</p>
                     </div>
                   </div>
                 )}
               </div>
 
-              <div className="bg-foreground text-background p-6">
-                <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-base opacity-80">{project.description}</p>
+              <div className="bg-foreground text-background p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-sm sm:text-base opacity-80">{project.description}</p>
               </div>
             </a>
           )
