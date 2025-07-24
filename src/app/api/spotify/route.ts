@@ -50,7 +50,8 @@ export async function GET() {
         track: "Nenhuma música tocando",
         artist: "Spotify",
         album: "",
-        imageUrl: ""
+        imageUrl: "",
+        external_url: ""
       })
     }
 
@@ -63,7 +64,8 @@ export async function GET() {
         track: "Nenhuma música tocando",
         artist: "Spotify",
         album: "",
-        imageUrl: ""
+        imageUrl: "",
+        external_url: ""
       })
     }
 
@@ -84,6 +86,7 @@ export async function GET() {
       artist: "Spotify",
       album: "",
       imageUrl: "",
+      external_url: "",
       error: 'Failed to fetch Spotify data'
     })
   }
